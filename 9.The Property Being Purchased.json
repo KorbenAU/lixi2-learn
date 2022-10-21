@@ -1,0 +1,68 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Address": [
+                    {
+                        "@AustralianPostCode": "2028",
+                        "@AustralianState": "NSW",
+                        "@Country": "AU",
+                        "@Suburb": "Double Bay",
+                        "@Type": "Standard",
+                        "@UniqueID": "ADD002",
+                        "Standard": {
+                            "@StreetName": "Ocean",
+                            "@StreetNumber": "100",
+                            "@StreetType": "Avenue"
+                        }
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "@UniqueID": "PA001"
+                    }
+                ],
+                "RealEstateAsset": [
+                    {
+                        "@Occupancy": "Owner Primary",
+                        "@PrimaryPurpose": "Owner Occupied",
+                        "@Transaction": "Purchasing",
+                        "@x_Address": "ADD002",
+                        "EstimatedValue": {
+                            "@EstimateBasis": "Applicant Estimate",
+                            "@EstimateMethodology": "Current Market Value",
+                            "@Value": 9500000.0
+                        },
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA001"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

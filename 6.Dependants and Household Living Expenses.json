@@ -1,0 +1,55 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Household": [
+                    {
+                        "@NumberOfDependants": 1,
+                        "@UniqueID": "HH001",
+                        "Dependant": [
+                            {
+                                "@Age": 3,
+                                "@DateOfBirth": "2019-09-14",
+                                "@Name": "Olivia Barty"
+                            }
+                        ],
+                        "ExpenseDetails": {
+                            "LivingExpense": [
+                                {
+                                    "@Amount": 125.0,
+                                    "@Category": "Telephone, internet, pay TV and media streaming subscriptions",
+                                    "@Description": "Mobile phone bill",
+                                    "@Frequency": "Monthly"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "@x_Household": "HH001"
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

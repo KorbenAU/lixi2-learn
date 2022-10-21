@@ -1,0 +1,58 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "PersonApplicant": [
+                    {
+                        "Employment": [
+                            {
+                                "SelfEmployed": {
+                                    "@ANZSCOOccupationCode": "452499",
+                                    "@Basis": "Full Time",
+                                    "@Occupation": "Tennis Player",
+                                    "@x_Employer": "RC001",
+                                    "BusinessIncomeYearToDate": {
+                                        "@ProfitAfterTax": 2844434.0,
+                                        "@ProfitBeforeTax": 5122783.0,
+                                        "@StartDate": "2019-01-07"
+                                    },
+                                    "Duration": {
+                                        "@Length": 8,
+                                        "@Units": "Years"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "RelatedCompany": [
+                    {
+                        "@ABN": "61495806780",
+                        "@BusinessName": "AB Tennis",
+                        "@BusinessStructure": "Sole Trader",
+                        "@UniqueID": "RC001"
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

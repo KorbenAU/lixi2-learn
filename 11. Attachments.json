@@ -1,0 +1,45 @@
+{
+    "Package": {
+        "Attachment": [
+            {
+                "@Filename": "NSW_Drive_Licence.jpg",
+                "@MediaType": "image/png",
+                "@MultipleDocumentsInAttachment": "No",
+                "@SequenceNumber": 1,
+                "@UniqueID": "DL-001",
+                "Content": [
+                    {
+                        "@Description": "A picture of Applicant Drivers Licence",
+                        "@SequenceNumber": 1,
+                        "@Type": "Australian Drivers Licence"
+                    }
+                ],
+                "InlineAttachment": {
+                    "$": "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"
+                }
+            }
+        ],
+        "Content": {
+            "Application": {}
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

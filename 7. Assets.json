@@ -1,0 +1,53 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "NonRealEstateAsset": [
+                    {
+                        "@Transaction": "Owns",
+                        "@Type": "Financial Asset",
+                        "EstimatedValue": {
+                            "@EstimateBasis": "Applicant Estimate",
+                            "@Value": 4000000.0
+                        },
+                        "FinancialAsset": {
+                            "@Type": "Savings Account"
+                        },
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA001"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "@UniqueID": "PA001"
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

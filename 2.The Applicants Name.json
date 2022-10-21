@@ -1,0 +1,36 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "PersonApplicant": [
+                    {
+                        "PersonName": {
+                            "@FirstName": "Ashleigh",
+                            "@NameTitle": "Ms",
+                            "@Surname": "Barty"
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

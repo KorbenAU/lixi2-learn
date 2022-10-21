@@ -1,0 +1,101 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Address": [
+                    {
+                        "@AustralianPostCode": "2028",
+                        "@AustralianState": "NSW",
+                        "@Country": "AU",
+                        "@Suburb": "Double Bay",
+                        "@Type": "Standard",
+                        "@UniqueID": "ADD002",
+                        "Standard": {
+                            "@StreetName": "Ocean",
+                            "@StreetNumber": "100",
+                            "@StreetType": "Avenue"
+                        }
+                    }
+                ],
+                "LoanDetails": [
+                    {
+                        "@AmountRequested": 5500000.0,
+                        "@LoanType": "Amortising Home Loan",
+                        "Borrowers": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA001"
+                                }
+                            ]
+                        },
+                        "LoanPurpose": {
+                            "@PrimaryPurpose": "Owner Occupied"
+                        },
+                        "ProposedRepayment": {
+                            "RegularRepayment": [
+                                {
+                                    "@Amount": 12000.0,
+                                    "@Frequency": "Fortnightly"
+                                }
+                            ]
+                        },
+                        "Security": [
+                            {
+                                "@x_Security": "REA002"
+                            }
+                        ],
+                        "Term": {
+                            "@TotalTermDuration": 25,
+                            "@TotalTermUnits": "Years"
+                        }
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "@UniqueID": "PA001",
+                        "PersonName": {
+                            "@FirstName": "Ashleigh",
+                            "@NameTitle": "Ms",
+                            "@Surname": "Barty"
+                        }
+                    }
+                ],
+                "RealEstateAsset": [
+                    {
+                        "@Transaction": "Purchasing",
+                        "@UniqueID": "REA002",
+                        "@x_Address": "ADD002",
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA001"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

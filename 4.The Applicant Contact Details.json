@@ -1,0 +1,66 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Address": [
+                    {
+                        "@AustralianPostCode": "4305",
+                        "@AustralianState": "QLD",
+                        "@Country": "AU",
+                        "@Suburb": "Ipswich",
+                        "@Type": "Standard",
+                        "@UniqueID": "ADD001",
+                        "Standard": {
+                            "@StreetName": "Boundary",
+                            "@StreetNumber": "18",
+                            "@StreetType": "Street"
+                        }
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "Contact": {
+                            "CurrentAddress": {
+                                "@HousingStatus": "With Parents",
+                                "@StartDate": "1996-04-24",
+                                "@x_ResidentialAddress": "ADD001"
+                            },
+                            "EmailAddress": [
+                                {
+                                    "@Email": "abarty@tennis.com"
+                                }
+                            ],
+                            "HomePhone": {
+                                "@AustralianDialingCode": "07",
+                                "@Number": "98765432"
+                            },
+                            "Mobile": {
+                                "@AustralianDialingCode": "04",
+                                "@Number": "11223344"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

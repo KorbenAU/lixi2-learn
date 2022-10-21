@@ -1,0 +1,46 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "PersonApplicant": [
+                    {
+                        "@ApplicantType": "Borrower",
+                        "@Citizenship": "AU",
+                        "@CountryOfBirth": "AU",
+                        "@DateOfBirth": "1996-04-24",
+                        "@FirstHomeBuyer": "Yes",
+                        "@Gender": "Female",
+                        "@MaritalStatus": "Single",
+                        "@PrimaryApplicant": "Yes",
+                        "@UniqueID": "PA001-ASHBARTY",
+                        "@YearsInCurrentProfession": 20.0,
+                        "PersonName": {
+                            "@FirstName": "Ashleigh",
+                            "@NameTitle": "Ms",
+                            "@Surname": "Barty"
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

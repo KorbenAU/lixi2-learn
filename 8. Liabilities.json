@@ -1,0 +1,56 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Liability": [
+                    {
+                        "@AnnualInterestRate": 5.5,
+                        "@OriginalAmount": 20000.0,
+                        "@OriginalLoanPurpose": "Personal",
+                        "@OutstandingBalance": 18000.0,
+                        "@Type": "Personal Loan",
+                        "PercentOwned": {
+                            "@Proportions": "Specified",
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA001"
+                                }
+                            ]
+                        },
+                        "Repayment": [
+                            {
+                                "@RepaymentAmount": 450.0,
+                                "@RepaymentFrequency": "Monthly"
+                            }
+                        ]
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "@UniqueID": "PA001"
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}
