@@ -1,0 +1,40 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "LoanDetails": [
+                    {
+                        "@OriginatorReferenceID": "JKL456789"
+                    }
+                ],
+                "Overview": {
+                    "@BrokerApplicationReferenceNumber": "ABC123456",
+                    "@LenderApplicationReferenceNumber": "XYZ654321",
+                    "@LodgementReferenceNumber": "FGH654321"
+                }
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Update": {
+                    "Status": {
+                        "@Name": "Application Received"
+                    }
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBANK",
+            "@PublishedDateTime": "2019-03-23T08:46:40"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBRBK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}
