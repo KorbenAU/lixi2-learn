@@ -1,0 +1,69 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "LoanDetails": [
+                    {
+                        "@AmountRequested": 5500000.0,
+                        "@LoanType": "Amortising Home Loan",
+                        "Borrowers": {
+                            "Owner": [
+                                {
+                                    "@x_Party": "PA001-CHRIS"
+                                },
+                                {
+                                    "@x_Party": "PA002-LIAM"
+                                }
+                            ]
+                        },
+                        "LendingPurpose": [
+                            {
+                                "@IncludesRefinancing": "No",
+                                "@LenderCode": "NewPurchase"
+                            }
+                        ],
+                        "LoanPurpose": {
+                            "@PrimaryPurpose": "Owner Occupied"
+                        },
+                        "ProposedRepayment": {
+                            "RegularRepayment": [
+                                {
+                                    "@Amount": 12000.0,
+                                    "@Frequency": "Fortnightly"
+                                }
+                            ]
+                        },
+                        "Security": [
+                            {
+                                "@x_Security": "REA002-DB"
+                            }
+                        ],
+                        "Term": {
+                            "@TotalTermDuration": 25,
+                            "@TotalTermUnits": "Years"
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

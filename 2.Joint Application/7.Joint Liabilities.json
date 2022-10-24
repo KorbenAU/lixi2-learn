@@ -1,0 +1,75 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Liability": [
+                    {
+                        "@AnnualInterestRate": 3.75,
+                        "@OriginalAmount": 200000.0,
+                        "@OriginalLoanPurpose": "Personal",
+                        "@OutstandingBalance": 90000.0,
+                        "@Type": "Car Loan",
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 50.0,
+                                    "@x_Party": "PA001-CHRIS"
+                                },
+                                {
+                                    "@Percent": 50.0,
+                                    "@x_Party": "PA002-LIAM"
+                                }
+                            ]
+                        },
+                        "RemainingTerm": {
+                            "@Duration": 32,
+                            "@Units": "Months"
+                        },
+                        "Repayment": [
+                            {
+                                "@RepaymentAmount": 3000.0,
+                                "@RepaymentFrequency": "Monthly"
+                            }
+                        ]
+                    },
+                    {
+                        "@AnnualInterestRate": 13.75,
+                        "@CreditCardType": "Visa",
+                        "@CreditLimit": 5000.0,
+                        "@MinimumRepaymentRate": 1.5,
+                        "@OutstandingBalance": 800.0,
+                        "@ProductName": "Gold Card",
+                        "@Type": "Credit Card",
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA002-LIAM"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

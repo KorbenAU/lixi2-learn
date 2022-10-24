@@ -1,0 +1,101 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "NonRealEstateAsset": [
+                    {
+                        "@Transaction": "Owns",
+                        "@Type": "Financial Asset",
+                        "EstimatedValue": {
+                            "@EstimateBasis": "Applicant Estimate",
+                            "@Value": 4000000.0
+                        },
+                        "FinancialAsset": {
+                            "@Type": "Savings Account",
+                            "AccountNumber": {
+                                "@AccountName": "John Matthews",
+                                "@AccountNumber": "12345678",
+                                "@BSB": "987654",
+                                "@FinancialInstitution": "Commonwealth Bank"
+                            }
+                        },
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA002-LIAM"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@Transaction": "Owns",
+                        "@Type": "Motor Vehicle and Transport",
+                        "@UniqueID": "NREA001-FERRARI",
+                        "EstimatedValue": {
+                            "@EstimateBasis": "Applicant Estimate",
+                            "@Value": 220000.0
+                        },
+                        "MotorVehicle": {
+                            "@Make": "Ferrari",
+                            "@Model": "Testarossa",
+                            "@RegistrationNumber": "THOR",
+                            "@Year": "1984"
+                        },
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 50.0,
+                                    "@x_Party": "PA001-CHRIS"
+                                },
+                                {
+                                    "@Percent": 50.0,
+                                    "@x_Party": "PA002-LIAM"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "RealEstateAsset": [
+                    {
+                        "@Occupancy": "Non Owner",
+                        "@PrimaryPurpose": "Investment",
+                        "@Transaction": "Owns Existing Mortgage",
+                        "@UniqueID": "REA001-INVESTMENT",
+                        "EstimatedValue": {
+                            "@EstimateBasis": "Applicant Estimate",
+                            "@Value": 1200000.0
+                        },
+                        "PercentOwned": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@x_Party": "PA001-CHRIS"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

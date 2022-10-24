@@ -1,0 +1,61 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "PersonApplicant": [
+                    {
+                        "@ApplicantType": "Borrower",
+                        "@Citizenship": "AU",
+                        "@CountryOfBirth": "AU",
+                        "@DateOfBirth": "1983-07-11",
+                        "@FirstHomeBuyer": "Yes",
+                        "@Gender": "Male",
+                        "@MaritalStatus": "Single",
+                        "@PrimaryApplicant": "Yes",
+                        "@UniqueID": "PA001-CHRIS",
+                        "PersonName": {
+                            "@FirstName": "Christopher",
+                            "@NameTitle": "Mr",
+                            "@Surname": "Hemsworth"
+                        }
+                    },
+                    {
+                        "@ApplicantType": "Borrower",
+                        "@Citizenship": "AU",
+                        "@CountryOfBirth": "AU",
+                        "@DateOfBirth": "1990-01-13",
+                        "@FirstHomeBuyer": "Yes",
+                        "@Gender": "Male",
+                        "@MaritalStatus": "Single",
+                        "@RelationshipToPrimaryApplicant": "Sibling",
+                        "@UniqueID": "PA002-LIAM",
+                        "PersonName": {
+                            "@FirstName": "Liam",
+                            "@NameTitle": "Mr",
+                            "@Surname": "Hemsworth"
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

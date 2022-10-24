@@ -1,0 +1,81 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "PersonApplicant": [
+                    {
+                        "@UniqueID": "PA001-CHRIS",
+                        "Employment": [
+                            {
+                                "SelfEmployed": {
+                                    "@ANZSCOOccupationCode": "212112",
+                                    "@Occupation": "Film Producer",
+                                    "@x_Employer": "RC001",
+                                    "BusinessIncomePrevious": {
+                                        "@ProfitAfterTax": 123000.0,
+                                        "@ProfitBeforeTax": 200000.0,
+                                        "@StartDate": "2017-01-07"
+                                    },
+                                    "BusinessIncomeRecent": {
+                                        "@ProfitAfterTax": 660000.0,
+                                        "@ProfitBeforeTax": 1000000.0,
+                                        "@StartDate": "2018-01-07"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@UniqueID": "PA001-LIAM",
+                        "Employment": [
+                            {
+                                "SelfEmployed": {
+                                    "@ANZSCOOccupationCode": "212112",
+                                    "@Occupation": "Film Producer",
+                                    "@x_Employer": "RC001",
+                                    "BusinessIncomePrevious": {
+                                        "@ProfitAfterTax": 66000.0,
+                                        "@ProfitBeforeTax": 100000.0,
+                                        "@StartDate": "2017-01-07"
+                                    },
+                                    "BusinessIncomeRecent": {
+                                        "@ProfitAfterTax": 330000.0,
+                                        "@ProfitBeforeTax": 500000.0,
+                                        "@StartDate": "2018-01-07"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "RelatedCompany": [
+                    {
+                        "@ABN": "12345678901",
+                        "@BusinessName": "Hemsworth Film Production",
+                        "@BusinessStructure": "Partnership",
+                        "@UniqueID": "RC001"
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

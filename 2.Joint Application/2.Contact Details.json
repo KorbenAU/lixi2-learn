@@ -1,0 +1,88 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Address": [
+                    {
+                        "@AustralianPostCode": "3000",
+                        "@AustralianState": "VIC",
+                        "@Country": "AU",
+                        "@Suburb": "Melbourne",
+                        "@Type": "Standard",
+                        "@UniqueID": "ADD001",
+                        "Standard": {
+                            "@StreetName": "Collins",
+                            "@StreetNumber": "18",
+                            "@StreetType": "Street"
+                        }
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "Contact": {
+                            "CurrentAddress": {
+                                "@HousingStatus": "Renting",
+                                "@StartDate": "2010-04-24",
+                                "@x_ResidentialAddress": "ADD001"
+                            },
+                            "EmailAddress": [
+                                {
+                                    "@Email": "chris@australianactorsassociation.com.au"
+                                }
+                            ],
+                            "HomePhone": {
+                                "@AustralianDialingCode": "07",
+                                "@Number": "98765432"
+                            },
+                            "Mobile": {
+                                "@AustralianDialingCode": "04",
+                                "@Number": "11223344"
+                            }
+                        }
+                    },
+                    {
+                        "Contact": {
+                            "CurrentAddress": {
+                                "@HousingStatus": "Renting",
+                                "@StartDate": "2010-04-24",
+                                "@x_ResidentialAddress": "ADD001"
+                            },
+                            "EmailAddress": [
+                                {
+                                    "@Email": "liam@australianactorsassociation.com.au"
+                                }
+                            ],
+                            "HomePhone": {
+                                "@AustralianDialingCode": "07",
+                                "@Number": "98564534"
+                            },
+                            "Mobile": {
+                                "@AustralianDialingCode": "04",
+                                "@Number": "11223355"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

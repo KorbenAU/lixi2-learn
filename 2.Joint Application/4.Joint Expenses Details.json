@@ -1,0 +1,68 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Household": [
+                    {
+                        "@NumberOfAdults": 2,
+                        "@NumberOfDependants": 0,
+                        "@UniqueID": "HH001",
+                        "ExpenseDetails": {
+                            "LivingExpense": [
+                                {
+                                    "@Amount": 350.0,
+                                    "@Category": "Groceries",
+                                    "@Frequency": "Weekly",
+                                    "PercentResponsible": {
+                                        "Owner": [
+                                            {
+                                                "@Percent": 50.0,
+                                                "@x_Party": "PA001-CHRIS"
+                                            },
+                                            {
+                                                "@Percent": 50.0,
+                                                "@x_Party": "PA002-LIAM"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@Amount": 1500.0,
+                                    "@Category": "Investment Property Running Costs",
+                                    "@Frequency": "Monthly",
+                                    "PercentResponsible": {
+                                        "Owner": [
+                                            {
+                                                "@Percent": 100.0,
+                                                "@x_Party": "PA001-CHRIS"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

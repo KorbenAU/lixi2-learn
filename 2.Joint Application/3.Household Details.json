@@ -1,0 +1,61 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Household": [
+                    {
+                        "@NumberOfAdults": 2,
+                        "@NumberOfDependants": 3,
+                        "@UniqueID": "HH001",
+                        "Dependant": [
+                            {
+                                "@Age": 8,
+                                "@DateOfBirth": "2012-05-11",
+                                "@Name": "India Hemsworth"
+                            },
+                            {
+                                "@Age": 6,
+                                "@DateOfBirth": "2012-05-02",
+                                "@Name": "Sasha Hemsworth"
+                            },
+                            {
+                                "@Age": 6,
+                                "@DateOfBirth": "2014-06-19",
+                                "@Name": "Tristan Hemsworth"
+                            }
+                        ]
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "@UniqueID": "PA001-CHRIS",
+                        "@x_Household": "HH001"
+                    },
+                    {
+                        "@UniqueID": "PA002-LIAM",
+                        "@x_Household": "HH001"
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}
