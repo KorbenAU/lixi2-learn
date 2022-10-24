@@ -1,0 +1,82 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "LoanDetails": [
+                    {
+                        "@AmountRequested": 490000.0,
+                        "@EstimatedSettlementDate": "2020-12-15",
+                        "@LoanType": "Amortising Home Loan",
+                        "@MaturityDate": "2030-10-15",
+                        "@ProductName": "Smart Saver Home Loan",
+                        "@ProposedAnnualInterestRate": 4.75,
+                        "@SMSFLoan": "No",
+                        "@Secured": "Yes",
+                        "Borrowers": {
+                            "Owner": [
+                                {
+                                    "@Percent": 100.0,
+                                    "@PrimaryBorrower": "Yes",
+                                    "@x_Party": "PA001"
+                                }
+                            ]
+                        },
+                        "LoanPurpose": {
+                            "@PrimaryPurpose": "Owner Occupied"
+                        },
+                        "Term": {
+                            "@InterestType": "Fixed Rate",
+                            "@InterestTypeDuration": 5,
+                            "@InterestTypeUnits": "Years",
+                            "@PaymentType": "Interest Only",
+                            "@PaymentTypeDuration": 2,
+                            "@PaymentTypeUnits": "Years",
+                            "@TotalTermDuration": 20,
+                            "@TotalTermUnits": "Years"
+                        }
+                    }
+                ],
+                "PersonApplicant": [
+                    {
+                        "@ApplicantType": "Borrower",
+                        "@PrimaryApplicant": "Yes",
+                        "@UniqueID": "PA001",
+                        "PersonName": {
+                            "@FirstName": "Ashleigh",
+                            "@NameTitle": "Ms",
+                            "@Surname": "Barty"
+                        }
+                    }
+                ],
+                "ProductPackage": [
+                    {
+                        "LoanDetails": [
+                            {
+                                "@x_LoanDetails": "LD001"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

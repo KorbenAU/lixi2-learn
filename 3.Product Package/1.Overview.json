@@ -1,0 +1,52 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "LoanDetails": [
+                    {
+                        "@LoanType": "Amortising Home Loan",
+                        "@UniqueID": "LD001"
+                    }
+                ],
+                "ProductPackage": [
+                    {
+                        "CreditCard": [
+                            {
+                                "@InclusionType": "Create New"
+                            }
+                        ],
+                        "DepositAccount": [
+                            {
+                                "@AlreadyExists": "No"
+                            }
+                        ],
+                        "LoanDetails": [
+                            {
+                                "@x_LoanDetails": "LD001"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

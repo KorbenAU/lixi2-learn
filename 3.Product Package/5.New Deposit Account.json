@@ -1,0 +1,63 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "DepositAccountDetails": [
+                    {
+                        "@InitialDepositAmount": 2000.0,
+                        "@ProductName": "Everyday Account",
+                        "@ProposedAnnualInterestRate": 3.75,
+                        "@StatementCycle": "Quarterly",
+                        "@Type": "Transactional",
+                        "@UniqueID": "DAD001"
+                    }
+                ],
+                "LoanDetails": [
+                    {
+                        "@LoanType": "Amortising Home Loan",
+                        "@UniqueID": "LD001"
+                    }
+                ],
+                "ProductPackage": [
+                    {
+                        "CreditCard": [
+                            {
+                                "@InclusionType": "Create New"
+                            }
+                        ],
+                        "DepositAccount": [
+                            {
+                                "@AlreadyExists": "No",
+                                "@x_DepositAccount": "DAD001"
+                            }
+                        ],
+                        "LoanDetails": [
+                            {
+                                "@x_LoanDetails": "LD001"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

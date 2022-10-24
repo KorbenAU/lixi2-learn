@@ -1,0 +1,66 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "LoanDetails": [
+                    {
+                        "@LoanType": "Amortising Home Loan",
+                        "@UniqueID": "LD001"
+                    }
+                ],
+                "NonRealEstateAsset": [
+                    {
+                        "@Type": "Financial Asset",
+                        "@UniqueID": "DA001",
+                        "FinancialAsset": {
+                            "@Type": "Transaction Account",
+                            "AccountNumber": {
+                                "@AccountNumber": "12345678",
+                                "@BSB": "654321"
+                            }
+                        }
+                    }
+                ],
+                "ProductPackage": [
+                    {
+                        "CreditCard": [
+                            {
+                                "@InclusionType": "Create New"
+                            }
+                        ],
+                        "DepositAccount": [
+                            {
+                                "@AlreadyExists": "Yes",
+                                "@x_DepositAccount": "DA001"
+                            }
+                        ],
+                        "LoanDetails": [
+                            {
+                                "@x_LoanDetails": "LD001"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBRKR"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBANK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}
