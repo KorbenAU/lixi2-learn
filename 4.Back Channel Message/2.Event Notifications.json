@@ -1,0 +1,47 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Overview": {
+                    "@BrokerApplicationReferenceNumber": "ABC123456"
+                }
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Update": {
+                    "Event": [
+                        {
+                            "@DateTime": "2019-03-23T08:46:40",
+                            "@Name": "Application Received"
+                        },
+                        {
+                            "@DateTime": "2019-03-23T09:26:35",
+                            "@Name": "Application Registered"
+                        },
+                        {
+                            "@DateTime": "2019-03-23T10:35:20",
+                            "@Name": "Employment Check Commenced"
+                        }
+                    ],
+                    "Status": {
+                        "@Name": "Application Registered"
+                    }
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBANK",
+            "@PublishedDateTime": "2019-03-23T08:46:40"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBRBK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}

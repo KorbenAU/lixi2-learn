@@ -1,0 +1,42 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Overview": {
+                    "@BrokerApplicationReferenceNumber": "RARN-001"
+                }
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Update": {
+                    "Status": {
+                        "@Name": "Conditionally Approved",
+                        "Condition": [
+                            {
+                                "@ConditionOwner": "Applicant",
+                                "@ConditionStatus": "Open",
+                                "@ConditionType": "Payslips",
+                                "@LoanConditionText": "Three payslips must be provided.",
+                                "@PreconditionToStage": "Unconditional Approval"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBANK",
+            "@PublishedDateTime": "2019-04-23T08:46:40"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBRBK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}
