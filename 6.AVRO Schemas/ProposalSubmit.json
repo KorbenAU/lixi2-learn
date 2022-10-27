@@ -1,0 +1,902 @@
+{
+    "type": "record",
+    "name": "Proposal Submit",
+    "fields": [
+        {
+            "name": "requestId",
+            "type": "string",
+            "doc": "Request id provided by client for correlation and duplicate request check purposes"
+        },
+        {
+            "name": "lenderReference",
+            "type": "string",
+            "doc": "The number by which the Lender identifies a loan facility"
+        },
+        {
+            "name": "customerId",
+            "type": "int",
+            "doc": "Customer Identifier assigned by Genworth. Genworth internal use only"
+        },
+        {
+            "name": "funderId",
+            "type": "int",
+            "doc": "Funder Identifier assigned by Genworth. When an account will be setup for API Genworth will allocate the Funder Id which then will be passed by the customer through the API at each proposal submission"
+        },
+        {
+            "name": "originatorId",
+            "type": "int",
+            "doc": "Originator Identifier assigned by Genworth. An originator is a party or company that originates the loan with the borrower, and will have some control or delegation over the underwriting process provided by the lending customer. An originator will generally not deal directly with Genworth unless granted direct originator status"
+        },
+        {
+            "name": "insuredPartyId",
+            "type": "int",
+            "doc": "The Trustee of the funding program. This is only applicable where the loan is funded by a Trustee. When the insured is not the same as the funder, e.g. a trustee of a funding program, the identifier for the trustee should be provided in this field"
+        },
+        {
+            "name": "loanSourceChannel",
+            "type": "string",
+            "doc": "The source through which the loan application was received. Retail - borrower interacting with a branch/lender mobile banker for home loan application. Third party - borrower interacting with a broker for home loan application. Wholesale - borrower interacting with a mortgage manager or via lender white label program for home loan application. Virtual - borrower interacting with a lender non face-to-face e.g online, digital or call centre for home loan application"
+        },
+        {
+            "name": "lenderLoanApprovalDate",
+            "type": "string",
+            "doc": "Date when the loan was approved by the lender, in ISO 8601 date format, for example 2018-11-11. Applicable to DUA underwriting type"
+        },
+        {
+            "name": "loanSettlementDate",
+            "type": "string",
+            "doc": "The date on which the funds were available to be drawn down by the borrower, in ISO 8601 date format. Applicable to DUA underwriting type"
+        },
+        {
+            "name": "preAllocatedLmiPolicyNumber",
+            "type": "int",
+            "doc": "The LMI policy number that the customer has selected from pre-allocated number ranges. Applicable to DUA underwriting type and to customers that have pre-allocated number ranges"
+        },
+        {
+            "name": "topUp",
+            "type": "boolean",
+            "doc": "For Top-up on an existing LMI policy, set the field to true. Absence of the field indicates the request is for a new LMI policy"
+        },
+        {
+            "name": "otherInsurerDetails",
+            "type": {
+                "type": "record",
+                "name": "otherInsurerDetails",
+                "fields": [
+                    {
+                        "name": "outstandingLoanBalanceInsured",
+                        "type": "int",
+                        "doc": "For Top-Ups to a loan previously insured by a different insurer, the topUp field must be False. The outstanding loan balance must be supplied in Outstanding Balance Uninsured field while the additional loan must be supplied in the LoanAmount field. This field is required when doing Top-Ups to a loan previously insured by a different insurer. minimum: 1, maximum: 999999999"
+                    },
+                    {
+                        "name": "lmiPremiumPaidDate",
+                        "type": "string",
+                        "doc": "For top ups to a loan insured by a different insurer, this is the date when the loan was settled by the lender. This field is required when doing Top-Ups to a loan previously insured by a different insurer."
+                    },
+                    {
+                        "name": "existingPremiumPaid",
+                        "type": "int",
+                        "doc": "For Top-Ups to a loan previously insured by a different insurer, this is the existing premium paid. This field is required when doing Top-Ups to a loan previously insured by a different insurer."
+                    },
+                    {
+                        "name": "previousInsuredLoanAmount",
+                        "type": "int",
+                        "doc": "The principal balance of the loan, assuming the borrower made the minimum required payments each time they were due (i.e. the loan is not in arrears or ahead of schedule). All loan splits/facilities should be included in this balance. Exclude internally refinanced loan amount that is to be included in the Loans section. The amount can be calculated by summing up current loan balances and all available redraw amounts. Applicable to only top up deals that were previously insured by a company other than Genworth."
+                    }
+                ]
+            },
+            "doc": "Details of the other insurer. This section is to be populated for topups to a loan previously insured by a different insurer."
+        },
+        {
+            "name": "preInforceVariation",
+            "type": "boolean",
+            "doc": "Request to update the proposal data that was submitted to Genworth earlier. The proposal must be in one of the pre In Force statuses: Approved, Conditionally Approved, Declined"
+        },
+        {
+            "name": "preInforceLmiPolicyNumber",
+            "type": "int",
+            "doc": "When requesting to update the proposal data previous sent to Genworth, provide the LMI policy number that has been assigned to that proposal. Mandatory when preInforceVariation is true"
+        },
+        {
+            "name": "brokerName",
+            "type": "string",
+            "doc": "Full name of the broker"
+        },
+        {
+            "name": "productName",
+            "type": "string",
+            "doc": "Genworth product name. Standard is available for a wide range of borrowers, including First Home Buyers and investors wishing to access residential mortgage finance. HomeBuyerPlus is available for borrowers, including First Home Buyers, wishing to purchase an owner-occupied property with limited or no savings, or those wishing to use money not sourced from their own savings as a deposit. BusinessSelect is available for Self-Employed borrowers who are unable to produce current financial information or documentation. FamilyPledge is available for borrowers, especially First Home Buyers with no deposit, who have an immediate family member that is willing and able to offer security"
+        },
+        {
+            "name": "coverType",
+            "type": "string",
+            "doc": "The type of insurance cover offered by a policy. FullCover covers 100% of the loan. Top Cover, or First Loss, is where Genworth pays the first portion of a claim up to a maximum amount (determined by cover rate). Risk Share is where Genworth shares the claim amount payable in accordance with the cover rate"
+        },
+        {
+            "name": "coverRate",
+            "type": "int",
+            "doc": "The portion of the insured loan amount that Genworth is at risk for, in percentage, e.g. 80 for 80%. Not required if coverType = FullCover"
+        },
+        {
+            "name": "coverTerm",
+            "type": "int",
+            "doc": "The term of insurance cover in number of years. Only required if the request is for a Limited Term Cover policy"
+        },
+        {
+            "name": "lvrCutOff",
+            "type": "int",
+            "doc": "This is a REQUIRED field for all customers with a valid Monthly Premium Master Policy having multiple LVR cut off. The same field will be IGNORED for customers without multiple LVR cut off."
+        },
+        {
+            "name": "premiumPayment",
+            "type": "string",
+            "doc": "This is a REQUIRED field for all customers with a valid Monthly Premium Master Policy. The same field will be IGNORED for non-Monthly Premium customers."
+        },
+        {
+            "name": "underwritingType",
+            "type": "string",
+            "doc": "The LMI underwriting type. Either DUA (delegated underwriting authority) with which the lender underwrites the LMI policy on behalf of Genworth, or STD (Standard) where Genworth will underwrite the policy"
+        },
+        {
+            "name": "premiumToBeCapitalised",
+            "type": "boolean",
+            "doc": "Indicate whether the premium will be capitalised"
+        },
+        {
+            "name": "scheduledLoanBalance",
+            "type": "int",
+            "doc": "The principal balance of the loan, assuming the borrower made the minimum required payments each time they were due (i.e. the loan is not in arrears or ahead of schedule). All loan splits/facilities should be included in this balance. Exclude internally refinanced loan amount that is to be included in the Loans section. The amount can be calculated by summing up current loan balances and all available redraw amounts. Applicable to Top-up only"
+        },
+        {
+            "name": "premiumQuoteNumber",
+            "type": "int",
+            "doc": "The quotation number provided to a Lender by Genworth to uniquely identify a set of circumstances that led to a premium amount calculation where applicable"
+        },
+        {
+            "name": "lendersApplicationRiskScore",
+            "type": "int",
+            "doc": "The application risk score generated by the lender scoring models"
+        },
+        {
+            "name": "existingLmiPolicyNumber",
+            "type": "int",
+            "doc": "Genworth LMI policy number associated with an existing loan facility with common borrowers and securities. Applicable to Top-up and internal refinance only. To correctly associate a Top-up request with a pre-existing LMI policy, the existing and most recent active Genworth LMI policy number should be supplied at the time of Top-up submission. If existing policy number is unknown, the service will try to find an existing policy based on borrowers and security addresses"
+        },
+        {
+            "name": "manualReviewRequired",
+            "type": "boolean",
+            "doc": "Indicate if this request requires manual review by an underwriter"
+        },
+        {
+            "name": "staffDiscountApplicable",
+            "type": "boolean",
+            "doc": "Indicate whether the request is eligeable for a staff discount"
+        },
+        {
+            "name": "applicants",
+            "type": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "applicants",
+                    "fields": [
+                        {
+                            "name": "applicantType",
+                            "type": "string",
+                            "doc": "Entity type of the borrowing party. Use Company for Trust and SMSF"
+                        },
+                        {
+                            "name": "applicantRole",
+                            "type": "string",
+                            "doc": "Determines whether the applicant is a Borrower or Guarantor"
+                        },
+                        {
+                            "name": "individual",
+                            "type": {
+                                "type": "record",
+                                "name": "applicants",
+                                "namespace": "individual",
+                                "fields": [
+                                    {
+                                        "name": "firstHomeBuyer",
+                                        "type": "boolean",
+                                        "doc": "First home buyers are defined as persons entering the home ownership market as owner occupiers or investors for the first time regardless of whether they receive a grant or not"
+                                    },
+                                    {
+                                        "name": "firstName",
+                                        "type": "string",
+                                        "doc": "The first name of the individual"
+                                    },
+                                    {
+                                        "name": "middleName",
+                                        "type": "string",
+                                        "doc": "The full middle name of the individual"
+                                    },
+                                    {
+                                        "name": "surname",
+                                        "type": "string",
+                                        "doc": "The full surname name of the individual"
+                                    },
+                                    {
+                                        "name": "dateOfBirth",
+                                        "type": "string",
+                                        "doc": "The date of birth of the individual, e.g. 1999-09-21"
+                                    },
+                                    {
+                                        "name": "maritalStatus",
+                                        "type": "string",
+                                        "doc": "The marital status of the individual"
+                                    },
+                                    {
+                                        "name": "driversLicenseNumber",
+                                        "type": "string",
+                                        "doc": "Driver licence number of the individual"
+                                    },
+                                    {
+                                        "name": "permanentResident",
+                                        "type": "boolean",
+                                        "doc": "Indicates whether the borrower is a permanent resident of Australia or not (true/false). Note: New Zealand citizens living and working in Australia are considered Permanent Residents. Australian citizens living and working overseas are treated as non-residents for loan purpose"
+                                    },
+                                    {
+                                        "name": "employmentDetail",
+                                        "type": {
+                                            "type": "record",
+                                            "name": "applicants",
+                                            "namespace": "employmentDetail.individual",
+                                            "fields": [
+                                                {
+                                                    "name": "currentEmploymentStatus",
+                                                    "type": "string",
+                                                    "doc": "The current employment status of the individual (Borrower/Guarantor) at time of origination. For LMI purposes, an individual is considered Self Employed when they receive the majority (i.e. 50% or more) of their total income from a business in which they are the sole trader, a partner, director or shareholder"
+                                                },
+                                                {
+                                                    "name": "employmentBasis",
+                                                    "type": "string",
+                                                    "doc": "Individuals (Borrower/Guarantor) current employment basis at the time of origination"
+                                                },
+                                                {
+                                                    "name": "industryType",
+                                                    "type": "string",
+                                                    "doc": "The industry in which the applicant is working"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "residentialAddress",
+                                        "type": {
+                                            "type": "record",
+                                            "name": "applicants",
+                                            "namespace": "residentialAddress.individual",
+                                            "fields": [
+                                                {
+                                                    "name": "unitNumber",
+                                                    "type": "string",
+                                                    "doc": "Unit number. If unit number has not been assigned for a new development, supply the lot number with Lot prefix, e.g. Lot3"
+                                                },
+                                                {
+                                                    "name": "streetNumber",
+                                                    "type": "string",
+                                                    "doc": "Street number. If the street number exceeds 8 characters and contains a dash, e.g. 1234-1236, supply the part before the dash only, i.e. 1234. If street number has not been assigned for a new development, supply the lot number with Lot prefix and a space, e.g. Lot 3"
+                                                },
+                                                {
+                                                    "name": "streetName",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "streetType",
+                                                    "type": "string",
+                                                    "doc": "Street type. Refer to Genworth street type list"
+                                                },
+                                                {
+                                                    "name": "suburb",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "state",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "postcode",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "country",
+                                                    "type": "string",
+                                                    "doc": "Country code per ISO-3166 definition. The service accepts only AU in this field."
+                                                }
+                                            ]
+                                        },
+                                        "doc": "Street address of applicant or security"
+                                    }
+                                ]
+                            },
+                            "doc": "Provide details of each individual applicant on a proposal request"
+                        },
+                        {
+                            "name": "company",
+                            "type": {
+                                "type": "record",
+                                "name": "applicants",
+                                "namespace": "company",
+                                "fields": [
+                                    {
+                                        "name": "companyName",
+                                        "type": "string",
+                                        "doc": "The registered company name when the borrower/guarantor is a business or company"
+                                    },
+                                    {
+                                        "name": "companyType",
+                                        "type": "string",
+                                        "doc": "The registered applicant (borrower/guarantor) company type when the applicant is a business or company"
+                                    },
+                                    {
+                                        "name": "companyABN",
+                                        "type": "string",
+                                        "doc": "The applicants Australian Business Number (ABN). This is only required if the applicant (borrower/guarantor) is a business or company"
+                                    },
+                                    {
+                                        "name": "companyAddress",
+                                        "type": {
+                                            "type": "record",
+                                            "name": "applicants",
+                                            "namespace": "companyAddress.company",
+                                            "fields": [
+                                                {
+                                                    "name": "unitNumber",
+                                                    "type": "string",
+                                                    "doc": "Unit number. If unit number has not been assigned for a new development, supply the lot number with Lot prefix, e.g. Lot3"
+                                                },
+                                                {
+                                                    "name": "streetNumber",
+                                                    "type": "string",
+                                                    "doc": "Street number. If the street number exceeds 8 characters and contains a dash, e.g. 1234-1236, supply the part before the dash only, i.e. 1234. If street number has not been assigned for a new development, supply the lot number with Lot prefix and a space, e.g. Lot 3"
+                                                },
+                                                {
+                                                    "name": "streetName",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "streetType",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "suburb",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "state",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "postcode",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "country",
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "doc": "Street address of applicant or security"
+                                    }
+                                ]
+                            },
+                            "doc": "Details for a Company Borrower"
+                        },
+                        {
+                            "name": "income",
+                            "type": {
+                                "type": "record",
+                                "name": "applicants",
+                                "namespace": "income",
+                                "fields": [
+                                    {
+                                        "name": "annualGrossIncome",
+                                        "type": "int",
+                                        "doc": "The total gross annual income for each applicant (borrower/guarantor) - as used by the lender in their serviceability assessment. The amount is excluding rental income"
+                                    },
+                                    {
+                                        "name": "annualGrossRentalIncome",
+                                        "type": "int",
+                                        "doc": "The total gross annual income, where the source is rental income, for each applicant (borrower/guarantor) as used by the lender in their serviceability assessment"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "primaryBorrower",
+                            "type": "boolean",
+                            "doc": "Indicate whether this is the primary borrower in the application. There should be one and only one primary borrower"
+                        },
+                        {
+                            "name": "creditScore",
+                            "type": "int",
+                            "doc": "This is a REQUIRED field for all customers with a valid Credit Score Pricing Master Policy. The same field will be IGNORED for non-Credit Score Pricing customers."
+                        }
+                    ]
+                }
+            },
+            "doc": "All applicants (borrowers and guarantors) of the loans"
+        },
+        {
+            "name": "serviceability",
+            "type": {
+                "type": "record",
+                "name": "serviceability",
+                "fields": [
+                    {
+                        "name": "lendersServiceabilityType",
+                        "type": "string",
+                        "doc": "Serviceability type used by the lender. NDI (net disposable income ratio), NDS (net monthly surplus), DSR (debt servicing ratio)"
+                    },
+                    {
+                        "name": "lendersServiceabilityNdiRatio",
+                        "type": "int",
+                        "doc": "Serviceability indicator expressed as a ratio of borrowers net disposable income over debt repayments and living expenses. Provide this if serviceability type is NDI"
+                    },
+                    {
+                        "name": "lendersNetMonthlySurplus",
+                        "type": "int",
+                        "doc": "Provide this if serviceability type is NDS"
+                    },
+                    {
+                        "name": "lendersDebtServicingRatio",
+                        "type": "int",
+                        "doc": "Provide this if serviceability type is DSR"
+                    },
+                    {
+                        "name": "totalSecuredLiabilitiesAmount",
+                        "type": "int",
+                        "doc": "Total limit of all secured liabilities (actual balance plus any available redraw) for all applicants at the application date, excluding any liabilities being refinanced as part of the insured loan"
+                    },
+                    {
+                        "name": "totalUnsecuredLiabilitiesAmount",
+                        "type": "int",
+                        "doc": "Total limit of all unsecured liabilities (actual balance plus any available redraw) for all applicants at the application date, excluding any liabilities being refinanced as part of the insured loan"
+                    },
+                    {
+                        "name": "totalMonthlyRepaymentAmount",
+                        "type": "int",
+                        "doc": "Total monthly repayment amount for all applicants (borrower/guarantor) commitments as used by the lender in their serviceability assessment, excluding the repayment amount for this loan"
+                    },
+                    {
+                        "name": "actualAnnualLivingCost",
+                        "type": "int",
+                        "doc": "This is the sum of all applicants (borrower/guarantor) annual living expenses as declared at the time of application. This is inclusive of basic costs and discretionary expenses. Please use the Annual Living Expenses as used in servicing calculator"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "securities",
+            "type": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "securities",
+                    "fields": [
+                        {
+                            "name": "securityType",
+                            "type": "string",
+                            "doc": "The type of security. Use CL for commercial properties, IN for industrial properties, OT for Rural properties. For residential properties, use one of the following codes: CA (Inner city apartment), UN (Unit/Flat/Apartment), HO (House/Semi/Townhouse/Duplex/Villa/Terrace), CO (Converted Commercial/Motel/Industrial/Warehouse properties), SM (ServicedApartment/ResortUnit/RentalGuarantee/Timeshare), VM (VacantLand-Major locations), VO (VacantLand-Other locations), SA (Studio apartment/Bedsitter), GU (Limited guarantee-Unit for Family Pledge), GH (Limited guarantee-House for Family Pledge), OT (All others)"
+                        },
+                        {
+                            "name": "occupancyType",
+                            "type": "string",
+                            "doc": "The borrowers intended purpose of the security at time of origination. Use Investment for rental property"
+                        },
+                        {
+                            "name": "securityAddress",
+                            "type": {
+                                "type": "record",
+                                "name": "securities",
+                                "namespace": "securityAddress",
+                                "fields": [
+                                    {
+                                        "name": "unitNumber",
+                                        "type": "string",
+                                        "doc": "Unit number. If unit number has not been assigned for a new development, supply the lot number with Lot prefix, e.g. Lot3"
+                                    },
+                                    {
+                                        "name": "streetNumber",
+                                        "type": "string",
+                                        "doc": "Street number. If the street number exceeds 8 characters and contains a dash, e.g. 1234-1236, supply the part before the dash only, i.e. 1234. If street number has not been assigned for a new development, supply the lot number with Lot prefix and a space, e.g. Lot 3"
+                                    },
+                                    {
+                                        "name": "streetName",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "streetType",
+                                        "type": "string",
+                                        "doc": "Street type. Refer to Genworth street type list"
+                                    },
+                                    {
+                                        "name": "suburb",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "state",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "postcode",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "country",
+                                        "type": "string",
+                                        "doc": "Country code per ISO-3166 definition. The service accepts only AU in this field"
+                                    }
+                                ]
+                            },
+                            "doc": "Street address of applicant or security"
+                        },
+                        {
+                            "name": "securityTypeStatus",
+                            "type": "string",
+                            "doc": "Status of construction of a security at time of origination. CH (Construction - H&L Package), CX (Constuction - Off the Plan/Other), CO (Construction - Owner Builder), CS (Construction - Standard Building Contract), N (New), E (Establised), V (Vacant Land)"
+                        },
+                        {
+                            "name": "estimatedValue",
+                            "type": "int",
+                            "doc": "Estimated value of the property in case valuation amount is not available. This is applicable to security type statuses Established or Vacant Land. Please provide either estimatedValue or purchasePrice"
+                        },
+                        {
+                            "name": "purchasePrice",
+                            "type": "int",
+                            "doc": "The contract sale price of the security excluding stamp duty. Do not supply this field if the loan is a construction loan"
+                        },
+                        {
+                            "name": "projectCosts",
+                            "type": "int",
+                            "doc": "For a construction loan, the security project cost is the total cost of the land, building costs and costs based on tender price. Security Project Costs is a requirement for construction loans only"
+                        },
+                        {
+                            "name": "guaranteeAmount",
+                            "type": "int",
+                            "doc": "Limited guarantee amount from the security. Required for family pledge and security type is either GU or GH"
+                        },
+                        {
+                            "name": "guarantorExistingLoanAmount",
+                            "type": "int",
+                            "doc": "Scheduled loan balance of guarantor attributable to the security. Required for family pledge and security type is either GU or GH"
+                        },
+                        {
+                            "name": "valuationPlatform",
+                            "type": "string",
+                            "doc": "The name of the valuation platform or the valuation provider that provided the valuation"
+                        },
+                        {
+                            "name": "valuationId",
+                            "type": "string",
+                            "doc": "The most recent unique valuation identifier as captured by the Lender. For example, Valex Id"
+                        },
+                        {
+                            "name": "valuationAmount",
+                            "type": "int",
+                            "doc": "The actual valuation amount of the security at the time of Origination"
+                        },
+                        {
+                            "name": "contractOfSaleDate",
+                            "type": "string",
+                            "doc": "Contract Of Sale Date is the date when applicant signed the property contract"
+                        },
+                        {
+                            "name": "valuationDetails",
+                            "type": {
+                                "type": "record",
+                                "name": "securities",
+                                "namespace": "valuationDetails",
+                                "fields": [
+                                    {
+                                        "name": "valuationType",
+                                        "type": "string",
+                                        "doc": "string The type of valuation performed on the security"
+                                    },
+                                    {
+                                        "name": "valuerCompanyName",
+                                        "type": "string",
+                                        "doc": "The company name of the valuation firm that performed the valuation of the security"
+                                    },
+                                    {
+                                        "name": "valuationDate",
+                                        "type": "string",
+                                        "doc": "The actual valuation date of the security, in RFC-3339 format"
+                                    },
+                                    {
+                                        "name": "valuerFirstName",
+                                        "type": "string",
+                                        "doc": "First Name of the individual valuer that conducted the valuation"
+                                    },
+                                    {
+                                        "name": "valuerSurname",
+                                        "type": "string",
+                                        "doc": "Surname of the individual valuer that conducted the valuation"
+                                    },
+                                    {
+                                        "name": "livingAreaInSqm",
+                                        "type": "int",
+                                        "doc": "Total size of the living area in square metres, excluding balcony and car accommodation. Applicable to houses and units"
+                                    },
+                                    {
+                                        "name": "siteArea",
+                                        "type": "int",
+                                        "doc": "Total land size. Applicable to houses and vacant land"
+                                    },
+                                    {
+                                        "name": "siteAreaUnitOfMeasurement",
+                                        "type": "string",
+                                        "doc": "Unit of measurement for the site area"
+                                    },
+                                    {
+                                        "name": "noOfBedrooms",
+                                        "type": "int",
+                                        "doc": "Total number of bedrooms in the property"
+                                    },
+                                    {
+                                        "name": "currentUse",
+                                        "type": "string",
+                                        "doc": "The current use of the property"
+                                    },
+                                    {
+                                        "name": "marketability",
+                                        "type": "string",
+                                        "doc": "Marketability indicator as appearing in the Property Summary section of the valuation report"
+                                    },
+                                    {
+                                        "name": "sellingPeriodGreaterThanSixMonths",
+                                        "type": "boolean",
+                                        "doc": "Selling period greater than 6 months indicator as appearing in the Sales Evidence and The Market section of the valuation report"
+                                    },
+                                    {
+                                        "name": "commentsForSellingPeriod",
+                                        "type": "string",
+                                        "doc": "Detailed comments on selling period greater than 6 months"
+                                    },
+                                    {
+                                        "name": "essentialRepairsRequired",
+                                        "type": "boolean",
+                                        "doc": "Essential repairs indicator as appearing in the Property Summary section of the valuation report"
+                                    },
+                                    {
+                                        "name": "essentialRepairDetails",
+                                        "type": "string",
+                                        "doc": "Essential repair comments as appearing in the valuation report"
+                                    },
+                                    {
+                                        "name": "internalCondition",
+                                        "type": "string",
+                                        "doc": "Internal condition indicator as appearing in the Main Building section of the valuation report"
+                                    },
+                                    {
+                                        "name": "externalCondition",
+                                        "type": "string",
+                                        "doc": "External condition indicator as appearing in the Main Building section of the valuation report"
+                                    },
+                                    {
+                                        "name": "weeklyRentalValueUnfurnished",
+                                        "type": "int",
+                                        "doc": "Weekly Rental Value Unfurnished as estimated by the valuer in the valuation report"
+                                    },
+                                    {
+                                        "name": "propertyAndMarketRiskRatings",
+                                        "type": {
+                                            "type": "record",
+                                            "name": "securities",
+                                            "namespace": "propertyAndMarketRiskRatings.valuationDetails",
+                                            "fields": [
+                                                {
+                                                    "name": "locationAndNeighbourhood",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                },
+                                                {
+                                                    "name": "land",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                },
+                                                {
+                                                    "name": "environmentalIssues",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                },
+                                                {
+                                                    "name": "improvements",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                },
+                                                {
+                                                    "name": "marketVolatality",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                },
+                                                {
+                                                    "name": "recentMarketDirection",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                },
+                                                {
+                                                    "name": "localEconomyImpact",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                },
+                                                {
+                                                    "name": "marketSegmentConditions",
+                                                    "type": "string",
+                                                    "doc": "The ratings provided by the valuer on the API Property Pro Forma report"
+                                                }
+                                            ]
+                                        },
+                                        "doc": "Risk Rating of Property and Market"
+                                    },
+                                    {
+                                        "name": "comparableSales",
+                                        "type": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "record",
+                                                "name": "securities",
+                                                "namespace": "comparableSales.valuationDetails",
+                                                "fields": [
+                                                    {
+                                                        "name": "saleAdddress",
+                                                        "type": {
+                                                            "type": "record",
+                                                            "name": "securities",
+                                                            "namespace": "saleAdddress.comparableSales.valuationDetails",
+                                                            "fields": [
+                                                                {
+                                                                    "name": "unitNumber",
+                                                                    "type": "string",
+                                                                    "doc": "Unit number. If unit number has not been assigned for a new development, supply the lot number with Lot prefix, e.g. Lot3"
+                                                                },
+                                                                {
+                                                                    "name": "streetNumber",
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "name": "streetName",
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "name": "streetType",
+                                                                    "type": "string",
+                                                                    "doc": "Street type. Refer to Genworth street type list"
+                                                                },
+                                                                {
+                                                                    "name": "suburb",
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "name": "state",
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "name": "postcode",
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "name": "country",
+                                                                    "type": "string",
+                                                                    "doc": "Country code per ISO-3166 definition. The service accepts only AU in this field"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "doc": "Street address of applicant or security"
+                                                    },
+                                                    {
+                                                        "name": "saleDate",
+                                                        "type": "string",
+                                                        "doc": "The date that the comparable property was sold, in RFC-3339 format"
+                                                    },
+                                                    {
+                                                        "name": "salePrice",
+                                                        "type": "int",
+                                                        "doc": "The selling price of the comparable property"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "doc": "Comparable Sales information"
+                                    },
+                                    {
+                                        "name": "custForecastStandardDeviation",
+                                        "type": "int",
+                                        "doc": "Forecast Standard Deviation also known as a confidence score, is the value included within a AVM valuation type which is the deviation of a valuation value"
+                                    }
+                                ]
+                            },
+                            "doc": "The valuation details object to capture the attributes of a valuation report. This object is not required if the valuation platform is VaLex and there is an arrangement between the funder and Genworth to obtain the valuation report from VaLex directly"
+                        }
+                    ]
+                }
+            },
+            "doc": "All securities (properties) for the loans"
+        },
+        {
+            "name": "loans",
+            "type": {
+                "type": "array",
+                "items": {
+                    "type": "record",
+                    "name": "loans",
+                    "fields": [
+                        {
+                            "name": "lenderLoanAccountId",
+                            "type": "string",
+                            "doc": "The ID by which the Lender identifies each loan split within a loan facility. A single loan facility can have multiple Lender Loan split IDs as this field is unique to each Loan Component (split)"
+                        },
+                        {
+                            "name": "loanTermInMonths",
+                            "type": "int",
+                            "doc": "The agreed contracted term of the loan at the time of origination. In the event of a Top-up or variation to the policy, that impacts loan term, the new loan term must be provided"
+                        },
+                        {
+                            "name": "loanType",
+                            "type": "string",
+                            "doc": "The type of the loan. Indicate whether the loan is a regular mortgage loan or line of credit (LOC), and for the purchase of an investment property or an owner occupied property. PC (Owner Occupied), PI (Investment), LC (Owner Occupied - LOC), LI (Investment - LOC)"
+                        },
+                        {
+                            "name": "loanRepaymentType",
+                            "type": "string",
+                            "doc": "The type of payment features the loan has at the time of origination. PIF (Fixed P&I), PIV (Variable P&I), IOC (I/O Conversion to P&I), IOF (Interest Only Fixed), IOV (Interest Only Variable)"
+                        },
+                        {
+                            "name": "loanAmount",
+                            "type": "int",
+                            "doc": "The maximum approved amount of credit that is available for each loan component at the time of origination excluding the capitalised premium amount"
+                        },
+                        {
+                            "name": "loanPurpose",
+                            "type": "string",
+                            "doc": "The predominant purpose of this loan component. Where there are two or more purposes that are of equal amount, the purpose should be selected in line with the following prescribed hierarchical order: REF(Refinance), DCO(Debt Consolidation), ERL(Equity Release/Cash Out), CFD(Controlled Funds), BRG(Bridging), PCH(Purchase/Buy Real Estate), BCN(Construction/Build), HIM(Home Improvements), IRF(Internal Refinance)"
+                        },
+                        {
+                            "name": "initialInterestRateType",
+                            "type": "string",
+                            "doc": "The customer contracted mortgage interest rate type applicable to the loan at time of origination"
+                        },
+                        {
+                            "name": "fixedRatePeriodInMonths",
+                            "type": "int",
+                            "doc": "The number of months from the settlement date that the interest rate on the loan component is fixed"
+                        },
+                        {
+                            "name": "interestOnlyPeriodInMonths",
+                            "type": "int",
+                            "doc": "The period after which a non amortising loan (i.e. Loan Repayment Type = Interest Only) reverts to an amortizing loan. This is the period that is calculated from the loan settlement date"
+                        }
+                    ]
+                }
+            },
+            "doc": "The Loan Details used to capture the attributes of a loan"
+        },
+        {
+            "name": "contactName",
+            "type": "string",
+            "doc": "Name of the customers staff member that submitted/requires a response for the proposal"
+        },
+        {
+            "name": "contactPhone",
+            "type": "string",
+            "doc": "Contact phone number of the customers staff member. Include area code for land line numbers"
+        },
+        {
+            "name": "contactEmail",
+            "type": "string",
+            "doc": "Email address of the customers staff member"
+        },
+        {
+            "name": "additionalNotes",
+            "type": "string",
+            "doc": "The free text notes that the lender has entered in to their system to support the approval of the loan application"
+        },
+        {
+            "name": "campaign",
+            "type": "string",
+            "doc": "Campaign is an additional field to be used when pre-agreed with Genworth"
+        }
+    ]
+}
