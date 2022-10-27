@@ -2130,6 +2130,96 @@
                                                     }
                                                 },
                                                 "doc": "A business enterprise (including company, sole trader, partnership, trust, or government department) that is not an applicant but has a role in some aspect of the application."
+                                            },
+                                            {
+                                                "name": "ProductPackage",
+                                                "type": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "record",
+                                                        "name": "Package",
+                                                        "namespace": "ProductPackage.Application.Content",
+                                                        "fields": [
+                                                            {
+                                                                "name": "CreditCard",
+                                                                "type": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "record",
+                                                                        "name": "Package",
+                                                                        "namespace": "CreditCard.ProductPackage.Application.Content",
+                                                                        "fields": [
+                                                                            {
+                                                                                "name": "InclusionType",
+                                                                                "type": "enum",
+                                                                                "symbols": [
+                                                                                    "Add Existing",
+                                                                                    "Create New",
+                                                                                    "Upgrade Existing"
+                                                                                ],
+                                                                                "doc": "The status of the credit card that is to be incorporated into this product package."
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "doc": "Information regarding the credit card that is to be incorporated into the product package."
+                                                            },
+                                                            {
+                                                                "name": "DepositAccount",
+                                                                "type": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "record",
+                                                                        "name": "Package",
+                                                                        "namespace": "DepositAccount.ProductPackage.Application.Content",
+                                                                        "fields": [
+                                                                            {
+                                                                                "name": "AlreadyExists",
+                                                                                "type": "enum",
+                                                                                "symbols": [
+                                                                                    "Yes",
+                                                                                    "No"
+                                                                                ],
+                                                                                "doc": "A flag to indicate whether the deposit account already exists."
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "doc": "Information regarding the deposit account that is to be incorporated into the product package."
+                                                            },
+                                                            {
+                                                                "name": "LoanDetails",
+                                                                "type": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "record",
+                                                                        "name": "Package",
+                                                                        "namespace": "LoanDetails.ProductPackage.Application.Content",
+                                                                        "fields": [
+                                                                            {
+                                                                                "name": "x_LoanDetails",
+                                                                                "type": "string",
+                                                                                "doc": "The new loan that is to be added to the package."
+                                                                            },
+                                                                            {
+                                                                                "name": "SequenceNumber",
+                                                                                "type": "int",
+                                                                                "doc": "The order of these loan details within the sequence."
+                                                                            },
+                                                                            {
+                                                                                "name": "UniqueID",
+                                                                                "type": "string",
+                                                                                "doc": "Identifier for this element that is unique within this message."
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                "doc": "Information regarding the new loans that are to be incorporated into the product package."
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "doc": "Information about packages of products that are wrapped up, often including discounts or extra features offered through the package."
                                             }
                                         ]
                                     },
