@@ -1,0 +1,78 @@
+{
+    "Package": {
+        "Content": {
+            "Application": {
+                "Liability": [
+                    {
+                        "@ClearingFromOtherSource": "No",
+                        "@ClearingFromThisLoan": "Yes",
+                        "@ClearingFromThisLoanAmount": 200000.0,
+                        "@OutstandingBalance": 200000.0,
+                        "@RefinanceAmount": 200000.0,
+                        "AccountNumber": {
+                            "@FinancialInstitution": "ANZ Bank"
+                        },
+                        "Security": [
+                            {
+                                "@Priority": "First Mortgage",
+                                "@x_Security": "asset-1",
+                                "SecurityAgreement": {
+                                    "@Held": "Yes",
+                                    "@ToBeDischarged": "Yes"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "LoanDetails": [
+                    {
+                        "Security": [
+                            {
+                                "@Priority": "First Mortgage",
+                                "@x_Security": "asset-1"
+                            }
+                        ]
+                    }
+                ],
+                "RealEstateAsset": [
+                    {
+                        "@Transaction": "Owns Existing Mortgage",
+                        "@UniqueID": "asset-1",
+                        "Encumbrance": [
+                            {
+                                "@EncumbranceType": "Mortgage",
+                                "@PriorityAmount": 300000.0,
+                                "@ToBeDischarged": "No",
+                                "InFavourOf": [
+                                    {
+                                        "@Name": "ANZ"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "Instructions": {
+            "ApplicationInstructions": {
+                "Submit": {
+                    "@AssessmentType": "Full"
+                }
+            }
+        },
+        "Publisher": {
+            "@LIXICode": "LIXIBANK",
+            "@PublishedDateTime": "2019-03-23T08:46:40"
+        },
+        "Recipient": [
+            {
+                "@LIXICode": "LIXIBRBK"
+            }
+        ],
+        "SchemaVersion": {
+            "@LIXITransactionType": "CAL",
+            "@LIXIVersion": "2.6.52"
+        }
+    }
+}
